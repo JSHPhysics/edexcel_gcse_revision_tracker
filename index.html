@@ -230,14 +230,16 @@ body{background:var(--bg);color:var(--tx);font-family:var(--font);font-size:14px
 .bclr{margin-left:auto;font-size:10px;color:var(--tx3);background:none;border:1.5px solid var(--bd2);border-radius:5px;padding:3px 7px;cursor:pointer;font-family:var(--font);transition:all 0.15s;white-space:nowrap}
 .bclr:hover{background:#fff0f0;border-color:#fca5a5;color:#dc2626}
 /* Outcome rows */
-.col-hdr{display:grid;grid-template-columns:1fr 38px 38px 38px;padding:6px 14px;background:var(--surface2);border-bottom:1px solid var(--bd);border-top:1px solid var(--bd)}
+.col-hdr{display:grid;grid-template-columns:1fr 20px 38px 38px 38px;padding:6px 14px;background:var(--surface2);border-bottom:1px solid var(--bd);border-top:1px solid var(--bd)}
 .ch{font-size:10px;font-weight:700;color:var(--tx3);text-align:center;text-transform:uppercase;letter-spacing:.3px}
-.or{display:grid;grid-template-columns:1fr 38px 38px 38px 80px;padding:7px 14px;border-bottom:1px solid rgba(0,0,0,0.04);align-items:center;transition:background 0.1s}
+.col-help-btn{background:none;border:1px solid var(--bd2);border-radius:50%;width:15px;height:15px;font-size:9px;font-weight:700;color:var(--tx3);cursor:pointer;font-family:var(--font);line-height:15px;padding:0;display:inline-flex;align-items:center;justify-content:center;transition:all .15s;vertical-align:middle;flex-shrink:0}
+.col-help-btn:hover{border-color:var(--c1);color:var(--c1)}
+.or{display:grid;grid-template-columns:1fr 20px 38px 38px 38px;padding:7px 14px;border-bottom:1px solid rgba(0,0,0,0.04);align-items:center;transition:background 0.1s}
 .or:last-child{border-bottom:none}
 .or:hover{background:var(--surface2)}
 .or.done{background:color-mix(in srgb,var(--c3) 7%,var(--surface))}
 .ot{font-size:12.5px;color:var(--tx);padding-right:10px;line-height:1.45;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-.or-ts-wrap{display:flex;align-items:center;justify-content:flex-start;padding-left:6px}
+.or-ts-wrap{grid-column:1;grid-row:2;padding-left:0;padding-top:2px;display:flex;align-items:center}
 .or-ts{font-size:10px;color:var(--tx3);white-space:nowrap;cursor:pointer;border-bottom:1px dashed var(--bd2);line-height:1.3;transition:color 0.15s}
 .or-ts:hover{color:var(--c1);border-bottom-color:var(--c1)}
 /* Touch count popover */
@@ -366,10 +368,11 @@ body{background:var(--bg);color:var(--tx);font-family:var(--font);font-size:14px
   /* Topic view bars */
   .tv-bars{gap:8px}
   /* Subtopic col headers */
-  .col-hdr{grid-template-columns:1fr 48px 48px 48px}
+  .col-hdr{grid-template-columns:1fr 20px 48px 48px 48px}
   /* Outcome rows: timestamp drops to row 2 under text, not beside checkboxes */
-  .or{grid-template-columns:1fr 48px 48px 48px;grid-template-rows:auto auto;align-items:center}
+  .or{grid-template-columns:1fr 20px 48px 48px 48px;grid-template-rows:auto auto;align-items:center}
   .or .ot{grid-column:1;grid-row:1}
+  .or>div:nth-child(2){grid-column:2;grid-row:1}
   .or .cbw{grid-row:1}
   .or .or-ts-wrap{grid-column:1;grid-row:2;padding-left:0;padding-top:2px}
   /* Bulk bar wraps */
@@ -1287,9 +1290,9 @@ body{background:var(--bg);color:var(--tx);font-family:var(--font);font-size:14px
 .bclr{margin-left:auto;font-size:10px;color:var(--tx3);background:none;border:1.5px solid var(--bd2);border-radius:5px;padding:3px 7px;cursor:pointer;font-family:var(--font);transition:all 0.15s;white-space:nowrap}
 .bclr:hover{background:#fff0f0;border-color:#fca5a5;color:#dc2626}
 /* Outcome rows */
-.col-hdr{display:grid;grid-template-columns:1fr 38px 38px 38px;padding:6px 14px;background:var(--surface2);border-bottom:1px solid var(--bd);border-top:1px solid var(--bd)}
+.col-hdr{display:grid;grid-template-columns:1fr 20px 38px 38px 38px;padding:6px 14px;background:var(--surface2);border-bottom:1px solid var(--bd);border-top:1px solid var(--bd)}
 .ch{font-size:10px;font-weight:700;color:var(--tx3);text-align:center;text-transform:uppercase;letter-spacing:.3px}
-.or{display:grid;grid-template-columns:1fr 38px 38px 38px;padding:7px 14px;border-bottom:1px solid rgba(0,0,0,0.04);align-items:center;transition:background 0.1s}
+.or{display:grid;grid-template-columns:1fr 20px 38px 38px 38px;padding:7px 14px;border-bottom:1px solid rgba(0,0,0,0.04);align-items:center;transition:background 0.1s}
 .or:last-child{border-bottom:none}
 .or:hover{background:var(--surface2)}
 .or.done{background:color-mix(in srgb,var(--c3) 7%,var(--surface))}
@@ -1396,10 +1399,11 @@ body{background:var(--bg);color:var(--tx);font-family:var(--font);font-size:14px
   /* Topic view bars */
   .tv-bars{gap:8px}
   /* Subtopic col headers */
-  .col-hdr{grid-template-columns:1fr 48px 48px 48px}
+  .col-hdr{grid-template-columns:1fr 20px 48px 48px 48px}
   /* Outcome rows: timestamp drops to row 2 under text, not beside checkboxes */
-  .or{grid-template-columns:1fr 48px 48px 48px;grid-template-rows:auto auto;align-items:center}
+  .or{grid-template-columns:1fr 20px 48px 48px 48px;grid-template-rows:auto auto;align-items:center}
   .or .ot{grid-column:1;grid-row:1}
+  .or>div:nth-child(2){grid-column:2;grid-row:1}
   .or .cbw{grid-row:1}
   .or .or-ts-wrap{grid-column:1;grid-row:2;padding-left:0;padding-top:2px}
   /* Bulk bar wraps */
@@ -5690,7 +5694,6 @@ const SUBJECTS=[{
 },
 {
   id:"aqa-psychology-alevel",
-  hidden:true,
   name:"Psychology",
   exam_board:"AQA",
   qualification:"A-level",
@@ -6248,7 +6251,7 @@ const SUBJECTS=[{
   hidden:true,
   inherits_progress_from:"gcse-physics-edexcel",
   replaces:"gcse-physics-edexcel",
-  name:"Physics — LEH Custom",
+  name:"LEH GCSE Physics",
   exam_board:"Edexcel",
   qualification:"GCSE (9-1)",
   has_combined_separate:true,
@@ -7489,6 +7492,48 @@ const SUBJECTS=[{
     },
     ],
   },
+  {
+    id:"SPRT",name:"Revision Tasks",
+    sep_only:false,papers:[1,2],
+    subtopics:[
+    {
+      id:"SPRTa",name:"Revision booklets — Separate Science (Triple)",
+      type:"booklet",
+      sep_only:true,com_only:false,papers:[1,2],
+      outcomes:[
+        {id:"SPRT_T01",text:"Motion and Forces (SP2)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T02",text:"Conservation of Energy and Forces Doing Work (SP3 + SP8)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T03",text:"Waves (SP4)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T04",text:"Light and the Electromagnetic Spectrum (SP5)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T05",text:"Radioactivity (SP6)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T06",text:"Astronomy (SP7)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T07",text:"Forces and their Effects (SP9)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T08",text:"Electricity and Circuits (SP10)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T09",text:"Static Electricity (SP11)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T10",text:"Magnetism and the Motor Effect (SP12)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T11",text:"Electromagnetic Induction (SP13)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T12",text:"Particle Model (SP14)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+        {id:"SPRT_T13",text:"Forces and Matter (SP15)",higher:false,sep_only:true,com_only:false,papers:[1,2]},
+      ],
+    },
+    {
+      id:"SPRTb",name:"Revision booklets — Combined Science (Double)",
+      type:"booklet",
+      sep_only:false,com_only:true,papers:[1,2],
+      outcomes:[
+        {id:"SPRT_D01",text:"Motion and Forces (SP2)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D02",text:"Conservation of Energy and Forces Doing Work (SP3 + SP8)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D03",text:"Waves (SP4)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D04",text:"Light and the Electromagnetic Spectrum (SP5)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D05",text:"Radioactivity (SP6)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D06",text:"Topic booklet 9 + 13 + 15",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D07",text:"Static Electricity (SP11)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D08",text:"Magnetism and the Motor Effect (SP12)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+        {id:"SPRT_D09",text:"Particle Model (SP14)",higher:false,sep_only:false,com_only:true,papers:[1,2]},
+      ],
+    },
+    ],
+  },
   ],
 }
 ];
@@ -7514,14 +7559,16 @@ function loadUnlockedSubjects(){
 // ── FILTERING ────────────────────────────────────────────────────────────────
 function subVisible(sub){
   const sepOk = specMode==='sep'||!sub.sep_only;
+  const comOk = specMode==='com'||!sub.com_only;
   const optOk = !sub.option || selectedOptions.includes(sub.option);
-  return sepOk && optOk;
+  return sepOk && comOk && optOk;
 }
 function outcomeVisible(o){
   const sepOk  = specMode==='sep'||!o.sep_only;
+  const comOk  = specMode==='com'||!o.com_only;
   const tierOk = tierMode==='higher'||!o.higher;
   const optOk  = !o.option || selectedOptions.includes(o.option);
-  return sepOk && tierOk && optOk;
+  return sepOk && comOk && tierOk && optOk;
 }
 function topicVisible(t){
   return t.subtopics.some(s=>subVisible(s)&&s.outcomes.some(o=>outcomeVisible(o)));
@@ -7591,10 +7638,59 @@ function tierKey(subj){const s=subj||SUBJECT;const bid=s.inherits_progress_from|
 function optionKey(subj){const s=subj||SUBJECT;return 'gcse_opts_'+s.id;}
 // Column label helpers — read from SUBJECT.columns, fall back to defaults
 const COL_DEFAULT = ['Revised','Exam Qs','Reviewed'];
-const COL_SHORT   = ['Rev','Qs','Err'];
+const COL_SHORT   = ['R','E','M'];
+function showColHelp(el, labels) {
+  const existing = document.getElementById('col-help-pop');
+  if (existing) { existing.remove(); return; }
+  const pop = document.createElement('div');
+  pop.id = 'col-help-pop';
+  const rect = el.getBoundingClientRect();
+  pop.style.cssText = `position:fixed;z-index:600;background:var(--surface);border:1.5px solid var(--bd2);border-radius:10px;padding:8px 12px;box-shadow:0 4px 16px rgba(0,0,0,0.14);font-size:11px;color:var(--tx);line-height:1.7;white-space:nowrap;pointer-events:none`;
+  pop.innerHTML = labels.map((l,i)=>`<div><span style="font-weight:700;color:${['var(--c1)','var(--c2)','var(--c3)'][i]}">${colLabelShort(i)}</span> — ${l.replace(/^[A-Z] [—–] /,'')}</div>`).join('');
+  document.body.appendChild(pop);
+  const pw = pop.offsetWidth, ph = pop.offsetHeight;
+  let left = rect.right - pw;
+  let top  = rect.top - ph - 6;
+  if (top < 8) top = rect.bottom + 6;
+  if (left < 8) left = 8;
+  pop.style.left = Math.round(left) + 'px';
+  pop.style.top  = Math.round(top)  + 'px';
+  setTimeout(() => document.addEventListener('click', () => pop.remove(), {once:true}), 50);
+}
+
+function colHdrHtml(subtypeBooklet){
+  const labels = subtypeBooklet
+    ? 'Completed Qs|Marked &amp; corrected with MS|Made flashcards of mistakes'
+    : 'R — Reviewed my notes|E — Completed and marked some practice exam questions|M — Made flashcards of my mistakes to practice later';
+  const helpBtn = '<button class="col-help-btn" data-labels="'+labels+'" onclick="showColHelpBtn(this)" title="What do these mean?">?</button>';
+  if(subtypeBooklet){
+    return '<div class="col-hdr">'
+      +'<div class="ch" style="text-align:left;color:var(--tx2)">Booklet</div>'
+      +'<div class="ch">'+helpBtn+'</div>'
+      +'<div class="ch" style="color:var(--c1)">C</div>'
+      +'<div class="ch" style="color:var(--c2)">M</div>'
+      +'<div class="ch" style="color:var(--c3)">F</div>'
+      +'</div>';
+  }
+  return '<div class="col-hdr">'
+    +'<div class="ch" style="text-align:left;color:var(--tx2)">Learning outcome</div>'
+    +'<div class="ch">'+helpBtn+'</div>'
+    +'<div class="ch" style="color:var(--c1)">'+colLabelShort(0)+'</div>'
+    +'<div class="ch" style="color:var(--c2)">'+colLabelShort(1)+'</div>'
+    +'<div class="ch" style="color:var(--c3)">'+colLabelShort(2)+'</div>'
+    +'</div>';
+}
+
+
+function showColHelpBtn(el){
+  showColHelp(el, el.dataset.labels.split('|'));
+}
+
+
 function colLabel(n){ return (SUBJECT.columns||COL_DEFAULT)[n]||COL_DEFAULT[n]; }
-function colLabelShort(n){ 
-  if(SUBJECT.columns){ const l=SUBJECT.columns[n]; return l?l.slice(0,4):COL_SHORT[n]; }
+function colLabelShort(n){
+  // Always single letter for column headers — full label available via colLabel(n)
+  if(SUBJECT.columns){ const l=SUBJECT.columns[n]; return l?l[0].toUpperCase():COL_SHORT[n]; }
   return COL_SHORT[n];
 }
 function load(){
@@ -7842,7 +7938,11 @@ function openSubjectDashboard(sid){
 }
 
 function renderHome(){
-  const active=SUBJECTS.filter(subjHasProgress);
+  // Build set of subject IDs replaced by an unlocked variant
+  const homeReplacedIds=new Set(
+    SUBJECTS.filter(s=>s.replaces&&unlockedSubjects.has(s.id)).map(s=>s.replaces)
+  );
+  const active=SUBJECTS.filter(s=>subjHasProgress(s)&&!homeReplacedIds.has(s.id));
   const pcts=active.map(s=>subjectPct(s,loadProgressForSubject(s)));
   let h=`<div class="home-wrap">`;
 
@@ -8024,6 +8124,7 @@ function renderTopic(t){
     const ss=sStats(sub);
     const sepTag=sub.sep_only?`<span class="sep-tag">Sep only</span>`:'';
     const isRevisit=sub.type==='revisit';
+    const isBooklet=sub.type==='booklet';
     const subProg=isRevisit?`${sub.outcomes.filter(o=>outcomeVisible(o)&&gvn(o.id,'conf')===3).length}/${sub.outcomes.filter(o=>outcomeVisible(o)).length} confident`:`${ss.r+ss.e+ss.m}/${ss.n*3} checks`;
     h+=`<div class="sub">
   <div class="sub-hdr" onclick="toggleSub('${sub.id}')">
@@ -8033,6 +8134,8 @@ function renderTopic(t){
   <div class="sub-body" id="${sub.id}_bd">`;
     if(isRevisit){
       h+=revisitSubHtml(sub);
+    } else if(isBooklet){
+      h+=bookletSubHtml(sub);
     } else {
     h+=`<div class="bulk-bar">
       <span class="bulk-lbl">Tick all:</span>
@@ -8042,21 +8145,17 @@ function renderTopic(t){
       <button class="bb bball" onclick="bulkAll('${sub.id}',true)">&#10003; All three</button>
       <button class="bclr" onclick="bulkAll('${sub.id}',false)">&#10005; Clear</button>
     </div>
-    <div class="col-hdr">
-      <div class="ch" style="text-align:left;color:var(--tx2)">Learning outcome</div>
-      <div class="ch" style="color:var(--c1)">${colLabelShort(0)}</div>
-      <div class="ch" style="color:var(--c2)">${colLabelShort(1)}</div>
-      <div class="ch" style="color:var(--c3)">${colLabelShort(2)}</div>
-    </div>`;
+    ${colHdrHtml(false)}`;
     for(const o of sub.outcomes){
       if(!outcomeVisible(o))continue;
       const rv=gv(o.id,'r'),ev=gv(o.id,'e'),mv=gv(o.id,'m');
       h+=`<div class="or${rv&&ev&&mv?' done':''}">
   <div class="ot">${esc(o.text)}${o.higher?'<span class="hb">H</span>':''}</div>
+  <div></div>
   <div class="cbw"><div class="cb r1${rv?' on':''}${cbIconClass()}" onclick="toggle('${o.id}','r')">${cbIcon('r',rv)}</div></div>
   <div class="cbw"><div class="cb r2${ev?' on':''}${cbIconClass()}" onclick="toggle('${o.id}','e')">${cbIcon('e',ev)}</div></div>
   <div class="cbw"><div class="cb r3${mv?' on':''}${cbIconClass()}" onclick="toggle('${o.id}','m')">${cbIcon('m',mv)}</div></div>
-  ${progress[o.id]&&progress[o.id].ts?`<div class="or-ts-wrap"><span class="or-ts" onclick="event.stopPropagation();showTcPop(this,'${o.id}')">${tsFormat(progress[o.id].ts)}</span></div>`:'<div></div>'}
+  ${progress[o.id]&&progress[o.id].ts?`<div class="or-ts-wrap"><span class="or-ts" onclick="event.stopPropagation();showTcPop(this,'${o.id}')">${tsFormat(progress[o.id].ts)}</span></div>`:''}
 </div>`;}
     h+=`</div>`; // close sub-body standard content
     } // end if/else revisit
@@ -8586,7 +8685,19 @@ function renderTopicTable(t){
   let rows='';
   for(const sub of t.subtopics){
     if(!subVisible(sub))continue;
-    if(sub.type==='revisit'){
+    if(sub.type==='booklet'){
+    for(const o of vis){
+      const rv=gv(o.id,'r'),ev=gv(o.id,'e'),mv=gv(o.id,'m');
+      rows+=`<div class="focus-outcome-row">
+        <div class="focus-outcome-txt">${esc(o.text)}</div>
+        <div class="focus-outcome-cbs">
+          <div class="focus-big-cb r-${rv?'on':'off'}${cbIconClass()}" onclick="toggle('${o.id}','r')" title="Completed Qs">${cbIcon('r',rv)}</div>
+          <div class="focus-big-cb e-${ev?'on':'off'}${cbIconClass()}" onclick="toggle('${o.id}','e')" title="Marked &amp; corrected">${cbIcon('e',ev)}</div>
+          <div class="focus-big-cb m-${mv?'on':'off'}${cbIconClass()}" onclick="toggle('${o.id}','m')" title="Made flashcards">${cbIcon('m',mv)}</div>
+        </div>
+      </div>`;
+    }
+  } else if(sub.type==='revisit'){
       rows+=`<tr class="t-sub-row"><td colspan="4">${sub.id} — ${sub.name}</td></tr>`;
       for(const o of sub.outcomes){
         if(!outcomeVisible(o))continue;
@@ -8601,6 +8712,19 @@ function renderTopicTable(t){
               <div class="pseg"></div>
             </div>
           </td>
+        </tr>`;
+      }
+    } else if(sub.type==='booklet'){
+      rows+=`<tr class="t-sub-row"><td colspan="4">${sub.id} — ${sub.name}</td></tr>`;
+      rows+=`<tr style="background:var(--surface2)"><th style="text-align:left;font-size:10px;color:var(--tx2);padding:4px 14px">Booklet</th><th style="font-size:10px;color:var(--c1)">Done</th><th style="font-size:10px;color:var(--c2)">Marked</th><th style="font-size:10px;color:var(--c3)">Cards</th></tr>`;
+      for(const o of sub.outcomes){
+        if(!outcomeVisible(o))continue;
+        const rv=gv(o.id,'r'),ev=gv(o.id,'e'),mv=gv(o.id,'m');
+        rows+=`<tr${rv&&ev&&mv?' class="t-done"':''}>
+          <td>${esc(o.text)}</td>
+          <td><div class="t-cb r-${rv?'on':'off'}${cbIconClass()}" onclick="toggle('${o.id}','r')">${cbIcon('r',rv)}</div></td>
+          <td><div class="t-cb e-${ev?'on':'off'}${cbIconClass()}" onclick="toggle('${o.id}','e')">${cbIcon('e',ev)}</div></td>
+          <td><div class="t-cb m-${mv?'on':'off'}${cbIconClass()}" onclick="toggle('${o.id}','m')">${cbIcon('m',mv)}</div></td>
         </tr>`;
       }
     } else {
@@ -8629,17 +8753,20 @@ function renderTopicSubCards(t,col){
   for(const sub of t.subtopics){
     if(!subVisible(sub))continue;
     const isRevisit=sub.type==='revisit';
+    const isBooklet=sub.type==='booklet';
     const ss=sStats(sub),sepTag=sub.sep_only?'<span class="sep-tag">Sep only</span>':'';
     const subProg=isRevisit?`${sub.outcomes.filter(o=>outcomeVisible(o)&&gvn(o.id,'conf')===3).length}/${sub.outcomes.filter(o=>outcomeVisible(o)).length} confident`:`${ss.r+ss.e+ss.m}/${ss.n*3} checks`;
     h+=`<div class="sub"><div class="sub-hdr" onclick="toggleSub('${sub.id}')"><div class="sub-left"><span class="sub-id" style="color:${col}">${sub.id}</span><span class="sub-name">${sub.name}</span>${sepTag}</div><div class="sub-right"><span class="sub-prog">${subProg}</span><span class="chev open" id="${sub.id}_ch">&#8964;</span></div></div><div class="sub-body" id="${sub.id}_bd">`;
     if(isRevisit){
       h+=revisitSubHtml(sub);
+    } else if(isBooklet){
+      h+=bookletSubHtml(sub);
     } else {
-      h+=`<div class="bulk-bar"><span class="bulk-lbl">Tick all:</span><button class="bb bb1" onclick="bulkField('${sub.id}','r',true)">✓ ${colLabel(0)}</button><button class="bb bb2" onclick="bulkField('${sub.id}','e',true)">✓ ${colLabel(1)}</button><button class="bb bb3" onclick="bulkField('${sub.id}','m',true)">✓ ${colLabel(2)}</button><button class="bb bball" onclick="bulkAll('${sub.id}',true)">&#10003; All three</button><button class="bclr" onclick="bulkAll('${sub.id}',false)">&#10005; Clear</button></div><div class="col-hdr"><div class="ch" style="text-align:left;color:var(--tx2)">Learning outcome</div><div class="ch" style="color:var(--c1)">${colLabelShort(0)}</div><div class="ch" style="color:var(--c2)">${colLabelShort(1)}</div><div class="ch" style="color:var(--c3)">${colLabelShort(2)}</div></div>`;
+      h+=`<div class="bulk-bar"><span class="bulk-lbl">Tick all:</span><button class="bb bb1" onclick="bulkField('${sub.id}','r',true)">✓ ${colLabel(0)}</button><button class="bb bb2" onclick="bulkField('${sub.id}','e',true)">✓ ${colLabel(1)}</button><button class="bb bb3" onclick="bulkField('${sub.id}','m',true)">✓ ${colLabel(2)}</button><button class="bb bball" onclick="bulkAll('${sub.id}',true)">&#10003; All three</button><button class="bclr" onclick="bulkAll('${sub.id}',false)">&#10005; Clear</button></div>${colHdrHtml(false)}`;
       for(const o of sub.outcomes){
         if(!outcomeVisible(o))continue;
         const rv=gv(o.id,'r'),ev=gv(o.id,'e'),mv=gv(o.id,'m');
-        h+=`<div class="or${rv&&ev&&mv?' done':''}" id="or_${o.id}"><div class="ot">${esc(o.text)}${o.higher?'<span class="hb">H</span>':''}</div><div class="cbw"><div class="cb r1${rv?' on':''}" onclick="toggle('${o.id}','r')">${rv?chk():''}</div></div><div class="cbw"><div class="cb r2${ev?' on':''}" onclick="toggle('${o.id}','e')">${ev?chk():''}</div></div><div class="cbw"><div class="cb r3${mv?' on':''}" onclick="toggle('${o.id}','m')">${mv?chk():''}</div></div></div>`;
+        h+=`<div class="or${rv&&ev&&mv?' done':''}" id="or_${o.id}"><div class="ot">${esc(o.text)}${o.higher?'<span class="hb">H</span>':''}</div><div></div><div class="cbw"><div class="cb r1${rv?' on':''}" onclick="toggle('${o.id}','r')">${rv?chk():''}</div></div><div class="cbw"><div class="cb r2${ev?' on':''}" onclick="toggle('${o.id}','e')">${ev?chk():''}</div></div><div class="cbw"><div class="cb r3${mv?' on':''}" onclick="toggle('${o.id}','m')">${mv?chk():''}</div></div></div>`;
       }
     }
     h+=`</div></div></div>`;
@@ -8970,18 +9097,31 @@ const UNLOCK_CODES = {
   'TEAMPHYSICS':  {desc:'Physics themes + Share Tech Mono', action:()=>{forceUnlock('theme','phys-osc');forceUnlock('theme','phys-signal');forceUnlock('font','sharetechmono');}},
   'WAVE440':      {desc:'Physics Oscilloscope Dark theme',   action:()=>forceUnlock('theme','phys-osc')},
   'SIGNAL2V':     {desc:'Physics Signal Light theme',        action:()=>forceUnlock('theme','phys-signal')},
-  'PETMODE':     {desc:'Unlock pet companion system', action:()=>{
-    petEnabled=true;
-    localStorage.setItem('gcse_pet_enabled','1');
-    updatePetWidget();
-    const hb=document.getElementById('pet-hdr-btn');
-    if(hb)hb.style.display='';
-    alert('Pet system unlocked! Click the paw button in the header.');
-  }},
+  'PETMODE':     {desc:'Unlock pet companion system',
+    restore:()=>{
+      petEnabled=true;
+      localStorage.setItem('gcse_pet_enabled','1');
+      updatePetWidget();
+      const hb=document.getElementById('pet-hdr-btn');
+      if(hb)hb.style.display='';
+    },
+    action:()=>{
+      petEnabled=true;
+      localStorage.setItem('gcse_pet_enabled','1');
+      updatePetWidget();
+      const hb=document.getElementById('pet-hdr-btn');
+      if(hb)hb.style.display='';
+      alert('Pet system unlocked! Click the paw button in the header.');
+    }},
   'COINMAX':     {desc:'Set coins to 9999 (debug)', action:()=>{coinBalance=9999;saveCoins();updateCoinDisplay();}},
   // Subject reveals
-  'DEBUGMODE':  {desc:'Debug subjects (CS, Psychology, Example options)', action:()=>{unlockSubject('igcse-cs-edexcel');unlockSubject('aqa-psychology-alevel');unlockSubject('example-options-debug');}},
-  'LEHPHYS25':  {desc:'LEH Custom Physics (Joshua)',  action:()=>unlockSubject('gcse-physics-edexcel-leh')},
+  'DEBUGMODE':  {desc:'Debug subjects (CS, Example options)', action:()=>{unlockSubject('igcse-cs-edexcel');unlockSubject('example-options-debug');}},
+  'LEHPHYS25':  {desc:'LEH GCSE Physics',
+    restore:()=>{ unlockSubject('gcse-physics-edexcel-leh'); },
+    action:()=>{
+      unlockSubject('gcse-physics-edexcel-leh');
+      showRankPopup({icon:'🔓',label:'Subject unlocked'},'LEH GCSE Physics','Now available in the subject chooser. Tap the subject name above to switch.');
+    }},
   // Reset code
   'RESETALL':    {desc:'Reset all progress, coins and unlocks', action:()=>resetEverything()},
 };
@@ -9035,7 +9175,7 @@ function renderStaffRoom(){
       ['WAVE440','Physics Oscilloscope Dark'],['SIGNAL2V','Physics Signal Light'],
     ]},
     {title:'📚 Subject reveals — unlocks hidden subjects in the chooser',rows:[
-      ['LEHPHYS25','LEH Custom Physics — Joshua\'s bespoke spec variant'],
+      ['LEHPHYS25','LEH GCSE Physics — school-specific spec variant'],
       ['DEBUGMODE','Debug subjects — iGCSE CS, AQA Psychology, Example options (dev only)'],
     ]},
     {title:'🐾 Extras',rows:[
@@ -9713,6 +9853,26 @@ function _petTopicCelebration() {
   setTimeout(() => _petShowBubble('topic'), heights.length * (singleJumpDur + 80) + 200);
 }
 
+function bookletSubHtml(sub){
+
+  let h='';
+  h+=colHdrHtml(true);
+  for(const o of sub.outcomes){
+    if(!outcomeVisible(o))continue;
+    const rv=gv(o.id,'r'),ev=gv(o.id,'e'),mv=gv(o.id,'m');
+    const ts=progress[o.id]?.ts;
+    h+=`<div class="or${rv&&ev&&mv?' done':''}">
+  <div class="ot">${esc(o.text)}</div>
+  <div></div>
+  <div class="cbw"><div class="cb r1${rv?' on':''}${cbIconClass()}" onclick="toggle('${o.id}','r')">${cbIcon('r',rv)}</div></div>
+  <div class="cbw"><div class="cb r2${ev?' on':''}${cbIconClass()}" onclick="toggle('${o.id}','e')">${cbIcon('e',ev)}</div></div>
+  <div class="cbw"><div class="cb r3${mv?' on':''}${cbIconClass()}" onclick="toggle('${o.id}','m')">${cbIcon('m',mv)}</div></div>
+  ${ts?`<div class="or-ts-wrap"><span class="or-ts" onclick="event.stopPropagation();showTcPop(this,'${o.id}')">${tsFormat(ts)}</span></div>`:''}
+</div>`;
+  }
+  return h;
+}
+
 function _petDoJump(heightMult) {
   petPlayAnim('jump');
   const prefix = (PET_TYPES[petData.type||'pink']||PET_TYPES.pink).prefix;
@@ -10092,75 +10252,15 @@ function scNotice(type,msg){
 // 'available' entries where subjectId matches a loaded SUBJECTS entry are clickable.
 const CATALOGUE=[
   // ── GCSE ──────────────────────────────────────────────────────────────────
-  // Edexcel GCSE
-  {q:'GCSE',board:'Edexcel',name:'Physics',     sid:'gcse-physics-edexcel'},
-  {q:'GCSE',board:'Edexcel',name:'Biology',     sid:null},
-  {q:'GCSE',board:'Edexcel',name:'Chemistry',   sid:null},
-  {q:'GCSE',board:'Edexcel',name:'Mathematics', sid:null},
-  {q:'GCSE',board:'Edexcel',name:'English Language',sid:null},
-  {q:'GCSE',board:'Edexcel',name:'English Literature',sid:null},
-  {q:'GCSE',board:'Edexcel',name:'History',     sid:null},
-  {q:'GCSE',board:'Edexcel',name:'Geography',   sid:null},
-  // AQA GCSE
-  {q:'GCSE',board:'AQA',name:'Physics',         sid:null},
-  {q:'GCSE',board:'AQA',name:'Biology',         sid:null},
-  {q:'GCSE',board:'AQA',name:'Chemistry',       sid:null},
-  {q:'GCSE',board:'AQA',name:'Mathematics',     sid:null},
-  {q:'GCSE',board:'AQA',name:'English Language',sid:null},
-  {q:'GCSE',board:'AQA',name:'English Literature',sid:null},
-  {q:'GCSE',board:'AQA',name:'History',         sid:null},
-  {q:'GCSE',board:'AQA',name:'Geography',       sid:null},
-  // OCR GCSE
-  {q:'GCSE',board:'OCR',name:'Physics',         sid:null},
-  {q:'GCSE',board:'OCR',name:'Biology',         sid:null},
-  {q:'GCSE',board:'OCR',name:'Chemistry',       sid:null},
-  {q:'GCSE',board:'OCR',name:'Mathematics',     sid:null},
-  // Eduqas GCSE
-  {q:'GCSE',board:'Eduqas',name:'Physics',      sid:null},
-  {q:'GCSE',board:'Eduqas',name:'Biology',      sid:null},
-  {q:'GCSE',board:'Eduqas',name:'Chemistry',    sid:null},
-  {q:'GCSE',board:'Eduqas',name:'English Language',sid:null},
-  {q:'GCSE',board:'Eduqas',name:'English Literature',sid:null},
-  // Edexcel iGCSE
-  {q:'GCSE',board:'Edexcel iGCSE',name:'Physics',  sid:null},
-  {q:'GCSE',board:'Edexcel iGCSE',name:'Biology',  sid:null},
-  {q:'GCSE',board:'Edexcel iGCSE',name:'Chemistry',sid:null},
-  {q:'GCSE',board:'Edexcel iGCSE',name:'Mathematics',sid:null},
-  {q:'GCSE',board:'Edexcel iGCSE',name:'Computer Science',sid:'igcse-cs-edexcel'},
-  // Cambridge iGCSE
-  {q:'GCSE',board:'Cambridge iGCSE',name:'Physics',    sid:null},
-  {q:'GCSE',board:'Cambridge iGCSE',name:'Biology',    sid:null},
-  {q:'GCSE',board:'Cambridge iGCSE',name:'Chemistry',  sid:null},
-  {q:'GCSE',board:'Cambridge iGCSE',name:'Mathematics',sid:null},
+  {q:'GCSE',board:'Edexcel',name:'Physics',            sid:'gcse-physics-edexcel'},
+  {q:'GCSE',board:'Edexcel iGCSE',name:'Computer Science', sid:'igcse-cs-edexcel'},
   // ── A-LEVEL ───────────────────────────────────────────────────────────────
-  // AQA A-level
-  {q:'A-level',board:'AQA',name:'Psychology',          sid:'aqa-psychology-alevel'},
-  // Custom school subjects
-  {q:'GCSE',board:'Custom',name:'Physics — LEH Custom', sid:'gcse-physics-edexcel-leh'},
-  // Debug / example
-  {q:'A-level',board:'Debug',name:'Example Subject (options demo)', sid:'example-options-debug'},
   {q:'A-level',board:'Edexcel',name:'Physics',         sid:'alevel-physics-edexcel'},
-  {q:'A-level',board:'Edexcel',name:'Biology',         sid:null},
-  {q:'A-level',board:'Edexcel',name:'Chemistry',       sid:null},
-  {q:'A-level',board:'Edexcel',name:'Mathematics',     sid:null},
-  {q:'A-level',board:'Edexcel',name:'Further Mathematics',sid:null},
-  // AQA A-level
-  {q:'A-level',board:'AQA',name:'Physics',             sid:null},
-  {q:'A-level',board:'AQA',name:'Biology',             sid:null},
-  {q:'A-level',board:'AQA',name:'Chemistry',           sid:null},
-  {q:'A-level',board:'AQA',name:'Mathematics',         sid:null},
-  {q:'A-level',board:'AQA',name:'Further Mathematics', sid:null},
-  {q:'A-level',board:'AQA',name:'Psychology',          sid:null},
-  // OCR A-level
-  {q:'A-level',board:'OCR',name:'Physics A',           sid:null},
-  {q:'A-level',board:'OCR',name:'Physics B',           sid:null},
-  {q:'A-level',board:'OCR',name:'Biology A',           sid:null},
-  {q:'A-level',board:'OCR',name:'Chemistry A',         sid:null},
-  {q:'A-level',board:'OCR',name:'Mathematics',         sid:null},
-  // Eduqas A-level
-  {q:'A-level',board:'Eduqas',name:'Physics',          sid:null},
-  {q:'A-level',board:'Eduqas',name:'Biology',          sid:null},
-  {q:'A-level',board:'Eduqas',name:'Chemistry',        sid:null},
+  {q:'A-level',board:'AQA',name:'Psychology',          sid:'aqa-psychology-alevel'},
+  // ── Custom school subjects ─────────────────────────────────────────────────
+  {q:'GCSE',board:'Custom',name:'LEH GCSE Physics',    sid:'gcse-physics-edexcel-leh'},
+  // ── Debug ──────────────────────────────────────────────────────────────────
+  {q:'A-level',board:'Debug',name:'Example Subject (options demo)', sid:'example-options-debug'},
 ];
 
 // ── SUBJECT CHOOSER FUNCTIONS ─────────────────────────────────────────────────
@@ -10276,6 +10376,14 @@ function renderSubjectChooser(){
     h+=`<div class="sj-qlbl">${q}</div>`;
     for(const board of boards[q]){
       const items=CATALOGUE.filter(e=>e.q===q&&e.board===board);
+      // Skip board entirely if all its items are hidden/locked or replaced
+      const visibleItems=items.filter(item=>{
+        if(!item.sid) return true; // coming soon items still show
+        const subjDef=SUBJECTS.find(s=>s.id===item.sid);
+        const hiddenAndLocked=subjDef&&subjDef.hidden&&!unlockedSubjects.has(item.sid);
+        return !hiddenAndLocked&&!replacedBySids.has(item.sid);
+      });
+      if(!visibleItems.length) continue;
       h+=`<div class="sj-board">
         <div class="sj-board-lbl">${board}<span class="sj-board-pill">${q}</span></div>
         <div class="sj-subjects">`;
@@ -10285,7 +10393,9 @@ function renderSubjectChooser(){
         const subjDef=SUBJECTS.find(s=>s.id===item.sid);
         const hiddenAndLocked=subjDef&&subjDef.hidden&&!unlockedSubjects.has(item.sid);
         const isReplaced=replacedBySids.has(item.sid);
-        if(loaded&&!hiddenAndLocked&&!isReplaced){
+        // Completely skip hidden-until-unlocked and replaced subjects
+        if(hiddenAndLocked||isReplaced) continue;
+        if(loaded){
           const subj=SUBJECTS.find(s=>s.id===item.sid);
           const isPickingThis=_optPickerSubj&&_optPickerSubj.id===item.sid;
           const hasOpts=subj&&subj.has_options;
@@ -10312,7 +10422,8 @@ function renderSubjectChooser(){
               <button class="opt-confirm" id="opt-confirm-btn" onclick="confirmOptions()" ${_optPickerSel.length===0?'disabled':''}>Confirm selection</button>
             </div>`;
           }
-        } else {
+        } else if(!item.sid) {
+          // sid:null = genuinely not yet built, show coming soon
           h+=`<div class="sj-item soon"><div class="sj-dot"></div>${item.name}<span class="sj-soon-lbl">coming soon</span></div>`;
         }
       }
